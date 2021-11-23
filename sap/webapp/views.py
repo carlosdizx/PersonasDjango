@@ -4,12 +4,5 @@ from django.shortcuts import render
 
 # Create your views here.
 def bienvenido(request):
-    return render(request, 'bienvenido.html')
-
-
-def despedirse(request):
-    return HttpResponse(f'Chao mundo, 2 + 2 = {2 + 2}')
-
-
-def contacto(request):
-    return HttpResponse('Datos de contacto, telefono: 3026508102 y correo: cediazb@siesa.com')
+    mensajes = {'mesnsaje': 'Valor 1','texto':'Valor 2'}
+    return render(request, 'bienvenido.html', mensajes)
