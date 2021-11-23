@@ -4,5 +4,4 @@ from django.shortcuts import render
 
 # Create your views here.
 def bienvenido(request):
-    mensajes = {'mesnsaje': 'Valor 1','texto':'Valor 2'}
-    return render(request, 'bienvenido.html', mensajes)
+    return render(request, 'bienvenido.html')
