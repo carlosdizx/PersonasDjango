@@ -20,5 +20,5 @@ from webapp.views import bienvenido
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('bienvenido/', bienvenido),
+    path('', bienvenido),
 ]
