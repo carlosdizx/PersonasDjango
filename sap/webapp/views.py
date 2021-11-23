@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 def bienvenido(request):
-    return HttpResponse(f'Hola mundo, 2 + 2 = {2 + 2}')
+    return render(request, 'bienvenido.html')
 
 
 def despedirse(request):
