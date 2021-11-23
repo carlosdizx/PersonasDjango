@@ -1,3 +1,4 @@
+import persona as persona
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -7,4 +8,5 @@ from personas.models import Persona
 
 def bienvenido(request):
     cantidad = Persona.objects.count()
-    return render(request, 'bienvenido.html', {'cantidad': cantidad})
+    personas = Persona.objects.all()
+    return render(request, 'bienvenido.html', {'cantidad': cantidad, 'personas': personas})

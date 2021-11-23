@@ -7,5 +7,13 @@
 <body>
 <h1>Sistema de Administrativo de Personas - SAP </h1>
 <h3>Total de personas registradas: {{cantidad}}</h3>
+<hr>
+<div>
+    <ul>
+        {% for persona in personas %}
+        <li>{{persona.id}} - {{persona.nombre}}   {{persona.apellido}} - {{persona.email}} {{persona.domicilio}}</li>
+        {% endfor %}
+    </ul>
+</div>
 </body>
 </html>
