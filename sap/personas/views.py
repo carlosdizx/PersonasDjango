@@ -43,5 +43,4 @@ def eliminar_persona(request, id):
 
 
 def listar_domicilios(request):
-    forma_persona = PersonaForm()
-    return render(request, 'nuevo.html', {'forma_persona': forma_persona})
+    return render(request, 'listado_domicilios.html')
