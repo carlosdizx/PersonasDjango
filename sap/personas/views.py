@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from personas.models import Persona
 
 
-def detalle_persona(request, id):
+def detalle_persona(request, ):
     persona = get_object_or_404(Persona, pk=id)
     return render(request, 'detalle.html', {'persona': persona})
 
@@ -21,3 +21,15 @@ def nueva_persona(request):
     else:
         forma_persona = PersonaForm()
     return render(request, 'nuevo.html', {'forma_persona': forma_persona})
+
+
+def editar_persona(request, id):
+    persona = get_object_or_404(Persona, pk=id)
+    if request.method == 'POST':
+        forma_persona = PersonaForm(request.POST, instance=persona)
+        if forma_persona.is_valid():
+            forma_persona.save()
+            return redirect('index')
+    else:
+        forma_persona = PersonaForm(instance=persona)
+    return render(request, 'editar.html', {'forma_persona': forma_persona})
