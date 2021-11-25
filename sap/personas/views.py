@@ -40,3 +40,8 @@ def eliminar_persona(request, id):
     if persona:
         persona.delete()
     return redirect('index')
+
+
+def listar_domicilios(request):
+    forma_persona = PersonaForm()
+    return render(request, 'nuevo.html', {'forma_persona': forma_persona})
