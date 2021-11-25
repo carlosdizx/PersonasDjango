@@ -1,7 +1,7 @@
 from django.forms import modelform_factory
 from django.shortcuts import render, get_object_or_404, redirect
 
-from personas.models import Persona
+from personas.models import Persona, Domicilio
 
 
 def detalle_persona(request, ):
@@ -43,4 +43,6 @@ def eliminar_persona(request, id):
 
 
 def listar_domicilios(request):
-    return render(request, 'listado_domicilios.html')
+    cantidad = Domicilio.objects.count()
+    domicilios = Domicilio.objects.all()
+    return render(request, 'listado_domicilios.html', {'cantidad': cantidad, 'domicilios': domicilios})

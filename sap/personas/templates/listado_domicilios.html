@@ -5,6 +5,34 @@
     <title>Listado domicilios</title>
 </head>
 <body>
-    <h1>Hola</h1>
+<div>
+    <h1>Domicilios</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Calle</th>
+            <th>#</th>
+            <th>Pais</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for domicilio in domicilios %}
+            <tr>
+                <td>{{ domicilio.id }}</td>
+                <td>{{ domicilio.calle }}</td>
+                <td>{{ domicilio.no_calle }}</td>
+                <td>{{ domicilio.pais }}</td>
+                <td>Editar</td>
+                <td>Eliminar</td>
+            </tr>
+        {% endfor %}
+
+
+        </tbody>
+    </table>
+</div>
 </body>
 </html>
