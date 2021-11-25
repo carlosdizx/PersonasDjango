@@ -33,3 +33,10 @@ def editar_persona(request, id):
     else:
         forma_persona = PersonaForm(instance=persona)
     return render(request, 'editar.html', {'forma_persona': forma_persona})
+
+
+def eliminar_persona(request, id):
+    persona = get_object_or_404(Persona, pk=id)
+    if persona:
+        persona.delete()
+    return redirect('index')
